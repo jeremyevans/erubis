@@ -31,7 +31,7 @@ module Erubis
 
     ## convert input string into target language
     def convert(input)
-      codebuf = ""    # or []
+      codebuf = String.new    # or []
       @preamble.nil? ? add_preamble(codebuf) : (@preamble && (codebuf << @preamble))
       convert_input(codebuf, input)
       @postamble.nil? ? add_postamble(codebuf) : (@postamble && (codebuf << @postamble))

@@ -24,7 +24,7 @@ module Erubis
     EMBEDDED_PATTERN = /<%(=+|\#)?(.*?)-?%>/m
 
     def convert(input)
-      src = "_buf = '';"           # preamble
+      src = String.new("_buf = '';")           # preamble
       pos = 0
       input.scan(EMBEDDED_PATTERN) do |indicator, code|
         m = Regexp.last_match
